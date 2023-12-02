@@ -15,16 +15,16 @@ export type HomeStackParams = {
   Home: undefined;
   First: {
     date: Date;
-    prime: String;
+    prime: number;
   };
   Second: {
     date: Date;
-    prime: String;
+    prime: number;
     secondary: String;
   };
   Record: {
     date: Date;
-    prime: String;
+    prime: number;
     secondary: String;
     summary: String;
   };
@@ -35,12 +35,8 @@ export default function Home() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{headerShown: false}}
-        />
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="First" component={FirstScreen} />
       </Stack.Navigator>
     </NavigationContainer>

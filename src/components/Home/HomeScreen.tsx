@@ -74,9 +74,13 @@ export default function HomeScreen({
               ],
             }}>
             <TouchableOpacity
-              onPress={() =>
-                navigation.navigate('First', {date: new Date(), prime: e.name})
-              }>
+              onPress={() => {
+                const day = new Date();
+                navigation.setOptions({
+                  title: `${day.getMonth() + 1}월 ${day.getDate()}일`,
+                });
+                navigation.navigate('First', {date: new Date(), prime: idx});
+              }}>
               <Text
                 style={{
                   fontSize: 20,

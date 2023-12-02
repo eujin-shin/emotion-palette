@@ -1,4 +1,13 @@
-export const priorEmotion = [
+import {ColorValue} from 'react-native/types';
+
+interface PriorArray {
+  map(
+    arg0: (e: any, idx: any) => import('react').JSX.Element,
+  ): import('react').ReactNode;
+  [index: number]: {name: String; id: string; color: ColorValue};
+}
+
+export const priorEmotion: PriorArray = [
   {
     name: '미움',
     id: '',
