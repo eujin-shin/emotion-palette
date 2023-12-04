@@ -15,6 +15,7 @@ export default function FirstScreen({
     `${route.params.date.getMonth() + 1}월 ${route.params.date.getDate()}일`,
   );
   const [prime, setPrime] = useState(route.params.prime);
+  const {width, height} = Dimensions.get('screen');
 
   return (
     <View>
@@ -24,7 +25,19 @@ export default function FirstScreen({
         pressLeft={() => navigation.goBack()}
       />
       <SafeAreaView>
-        <Text>{priorEmotion[prime].name}</Text>
+        <TitleText
+          title="오늘 어떤 기분이 들었나요?"
+          subtitle="감정으로 팔레트를 채워 보세요."
+        />
+        <View
+          style={{
+            width: width,
+            height: 140,
+            overflow: 'scroll',
+            backgroundColor: 'black',
+          }}>
+          <Image source={require('../../assets/img/Spectrum.png')} />
+        </View>
       </SafeAreaView>
     </View>
   );
