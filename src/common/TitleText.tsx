@@ -1,4 +1,4 @@
-import {View} from 'react-native';
+import {View, Dimensions} from 'react-native';
 import {CustomText as Text} from '../common/CustomText';
 
 interface TitleTextProps {
@@ -7,8 +7,14 @@ interface TitleTextProps {
 }
 
 export default function TitleText({title, subtitle}: TitleTextProps) {
+  const {height} = Dimensions.get('screen');
   return (
-    <View style={{width: '100%', alignItems: 'center', marginVertical: 40}}>
+    <View
+      style={{
+        width: '100%',
+        alignItems: 'center',
+        marginVertical: height * 0.05,
+      }}>
       <Text style={{fontSize: 16, fontWeight: 600, lineHeight: 30}}>
         {title}
       </Text>
