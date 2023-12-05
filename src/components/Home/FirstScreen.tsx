@@ -6,6 +6,7 @@ import TitleText from '../../common/TitleText';
 import {priorEmotion} from '../../../sampleData';
 import {HomeStackParams} from '../../pages/Home';
 import HomeStackHeader from './HomeStackHeader';
+import NextButton from '../../common/NextButton';
 
 export default function FirstScreen({
   navigation,
@@ -35,9 +36,11 @@ export default function FirstScreen({
             height: 140,
             overflow: 'scroll',
             backgroundColor: 'black',
+            marginBottom: 150,
           }}>
           <Image source={require('../../assets/img/Spectrum.png')} />
         </View>
+        <NextButton text="다음" color="#E8E8E8" onPress={() => {}} />
       </SafeAreaView>
     </View>
   );
