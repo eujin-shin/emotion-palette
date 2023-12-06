@@ -35,7 +35,13 @@ export default function SecondScreen({
         <NextButton
           text="다음"
           color={priorEmotion[prime].color.toString() + '50'}
-          onPress={() => {}}
+          onPress={() => {
+            navigation.navigate('Record', {
+              date: route.params.date,
+              prime: prime,
+              secondary: '',
+            });
+          }}
         />
       </View>
     </View>
