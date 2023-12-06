@@ -29,7 +29,7 @@ export default function HomeStackHeader({
     <View
       style={{
         backgroundColor: color,
-        height: Platform.OS === 'ios' ? height * 0.11 : height * 0.08,
+        height: Platform.OS === 'ios' ? height * 0.12 : height * 0.08,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'flex-end',

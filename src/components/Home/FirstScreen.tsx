@@ -53,7 +53,16 @@ export default function FirstScreen({
             }}
           />
         </View>
-        <NextButton text="다음" color="#E8E8E8" onPress={() => {}} />
+        <NextButton
+          text="다음"
+          color="#E8E8E8"
+          onPress={() => {
+            navigation.navigate('Second', {
+              date: route.params.date,
+              prime: prime,
+            });
+          }}
+        />
       </View>
     </View>
   );

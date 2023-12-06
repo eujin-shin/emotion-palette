@@ -13,7 +13,8 @@ export default function TitleText({title, subtitle}: TitleTextProps) {
       style={{
         width: '100%',
         alignItems: 'center',
-        marginVertical: height * 0.05,
+        marginTop: height * 0.08,
+        marginBottom: height * 0.05,
       }}>
       <Text style={{fontSize: 16, fontWeight: 600, lineHeight: 30}}>
         {title}

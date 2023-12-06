@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeScreen from '../components/Home/HomeScreen';
 import FirstScreen from '../components/Home/FirstScreen';
+import SecondScreen from '../components/Home/SecondScreen';
 import {
   NativeStackScreenProps,
   createNativeStackNavigator,
@@ -20,13 +21,11 @@ export type HomeStackParams = {
   Second: {
     date: Date;
     prime: number;
-    secondary: String;
   };
   Record: {
     date: Date;
     prime: number;
     secondary: String;
-    summary: String;
   };
 };
 
@@ -38,6 +37,7 @@ export default function Home() {
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="First" component={FirstScreen} />
+        <Stack.Screen name="Second" component={SecondScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
