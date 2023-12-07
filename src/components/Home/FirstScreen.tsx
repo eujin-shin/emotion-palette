@@ -6,6 +6,7 @@ import TitleText from '../../common/TitleText';
 import {priorEmotion} from '../../../sampleData';
 import {HomeStackParams} from '../../pages/Home';
 import HomeStackHeader from './HomeStackHeader';
+import dayToString from '../../common/dayToString';
 import ScrollSpectrum from '../../common/ScrollSpectrum';
 import NextButton from '../../common/NextButton';
 
@@ -13,16 +14,13 @@ export default function FirstScreen({
   navigation,
   route,
 }: StackScreenProps<HomeStackParams, 'First'>) {
-  const [title, setTitle] = useState(
-    `${route.params.date.getMonth() + 1}월 ${route.params.date.getDate()}일`,
-  );
   const [prime, setPrime] = useState(route.params.prime);
   const {width, height} = Dimensions.get('screen');
 
   return (
     <View>
       <HomeStackHeader
-        title={title}
+        title={dayToString(route.params.date)}
         color="#E8E8E8"
         pressLeft={() => navigation.goBack()}
       />
