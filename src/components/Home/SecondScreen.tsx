@@ -103,7 +103,7 @@ export default function SecondScreen({
           }}
         />
       </View>
-      <Modal visible={modal}>
+      <Modal visible={modal} animationType="fade">
         <SafeAreaView
           style={{
             height: '100%',

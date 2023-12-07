@@ -35,10 +35,10 @@ export default function ScrollSpectrum({
   };
 
   const handleScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
-    // setX(e.nativeEvent.contentOffset.x);
-    // const newCurrent = Math.floor(e.nativeEvent.contentOffset.x / (width / 3));
-    // setScroll(newCurrent);
-    // setCurrent(newCurrent);
+    const newCurrent = Math.floor(e.nativeEvent.contentOffset.x / (width / 3));
+    if (newCurrent < 0 || newCurrent > 13) return;
+    setScroll(newCurrent);
+    setCurrent(newCurrent);
   };
 
   return (
@@ -47,7 +47,7 @@ export default function ScrollSpectrum({
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         scrollEventThrottle={8}
-        onScroll={handleScroll}
+        onScrollEndDrag={handleScroll}
         ref={scrollViewRef}
         style={{
           width: width,
