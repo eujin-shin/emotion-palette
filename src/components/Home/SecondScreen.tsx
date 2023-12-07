@@ -17,14 +17,12 @@ import {HomeStackParams} from '../../pages/Home';
 import HomeStackHeader from './HomeStackHeader';
 import ScrollSpectrum from '../../common/ScrollSpectrum';
 import NextButton from '../../common/NextButton';
+import dayToString from '../../common/dayToString';
 
 export default function SecondScreen({
   navigation,
   route,
 }: StackScreenProps<HomeStackParams, 'Second'>) {
-  const [title, setTitle] = useState(
-    `${route.params.date.getMonth() + 1}월 ${route.params.date.getDate()}일`,
-  );
   const [prime, setPrime] = useState(route.params.prime);
   const [second, setSecond] = useState(-1);
   const [modal, setModal] = useState(false);
@@ -33,7 +31,7 @@ export default function SecondScreen({
   return (
     <View>
       <HomeStackHeader
-        title={title}
+        title={dayToString(route.params.date)}
         color={priorEmotion[prime].color.toString() + '50'}
         pressLeft={() => navigation.goBack()}
       />

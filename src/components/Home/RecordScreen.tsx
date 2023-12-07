@@ -15,6 +15,7 @@ import {priorEmotion} from '../../../sampleData';
 import {HomeStackParams} from '../../pages/Home';
 import HomeStackHeader from './HomeStackHeader';
 import NextButton from '../../common/NextButton';
+import dayToString from '../../common/dayToString';
 
 const {width, height} = Dimensions.get('screen');
 
@@ -55,9 +56,6 @@ export default function RecordScreen({
   navigation,
   route,
 }: StackScreenProps<HomeStackParams, 'Record'>) {
-  const [title, setTitle] = useState(
-    `${route.params.date.getMonth() + 1}월 ${route.params.date.getDate()}일`,
-  );
   const [prime, setPrime] = useState(route.params.prime);
   const [modal, setModal] = useState(false);
 
@@ -71,7 +69,7 @@ export default function RecordScreen({
   return (
     <View>
       <HomeStackHeader
-        title={title}
+        title={dayToString(route.params.date)}
         color={priorEmotion[prime].color.toString() + '50'}
         pressLeft={() => navigation.goBack()}
       />
