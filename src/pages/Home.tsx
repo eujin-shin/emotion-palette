@@ -16,15 +16,15 @@ import {
 export type HomeStackParams = {
   Home: undefined;
   First: {
-    date: Date;
+    date: String;
     prime: number;
   };
   Second: {
-    date: Date;
+    date: String;
     prime: number;
   };
   Record: {
-    date: Date;
+    date: String;
     prime: number;
     secondary: String;
   };

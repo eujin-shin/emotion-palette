@@ -13,12 +13,7 @@ import TitleText from '../../common/TitleText';
 import MenuButton from '../../common/MenuButton';
 import {priorEmotion} from '../../../sampleData';
 import {HomeStackParams} from '../../pages/Home';
-// import {
-//   NativeStackScreenProps,
-//   createNativeStackNavigator,
-// } from '@react-navigation/native-stack';
-// import {useNavigation, useFocusEffect} from '@react-navigation/native';
-// import {StackNavigationProp, StackScreenProps} from '@react-navigation/stack';
+import dayToString from '../../common/dayToString';
 
 export default function HomeScreen({
   navigation,
@@ -75,11 +70,10 @@ export default function HomeScreen({
             }}>
             <TouchableOpacity
               onPress={() => {
-                const day = new Date();
-                navigation.setOptions({
-                  title: `${day.getMonth() + 1}월 ${day.getDate()}일`,
+                navigation.navigate('First', {
+                  date: dayToString(new Date()),
+                  prime: idx,
                 });
-                navigation.navigate('First', {date: new Date(), prime: idx});
               }}>
               <Text
                 style={{

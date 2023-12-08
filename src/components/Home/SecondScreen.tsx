@@ -15,9 +15,7 @@ import TitleText from '../../common/TitleText';
 import {priorEmotion} from '../../../sampleData';
 import {HomeStackParams} from '../../pages/Home';
 import HomeStackHeader from './HomeStackHeader';
-import ScrollSpectrum from '../../common/ScrollSpectrum';
 import NextButton from '../../common/NextButton';
-import dayToString from '../../common/dayToString';
 
 export default function SecondScreen({
   navigation,
@@ -31,7 +29,7 @@ export default function SecondScreen({
   return (
     <View>
       <HomeStackHeader
-        title={dayToString(route.params.date)}
+        title={route.params.date}
         color={priorEmotion[prime].color.toString() + '50'}
         pressLeft={() => navigation.goBack()}
       />

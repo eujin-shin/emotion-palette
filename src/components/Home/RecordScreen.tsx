@@ -18,7 +18,6 @@ import {priorEmotion} from '../../../sampleData';
 import {HomeStackParams} from '../../pages/Home';
 import HomeStackHeader from './HomeStackHeader';
 import NextButton from '../../common/NextButton';
-import dayToString from '../../common/dayToString';
 
 const {width, height} = Dimensions.get('screen');
 
@@ -73,7 +72,7 @@ export default function RecordScreen({
   return (
     <View>
       <HomeStackHeader
-        title={dayToString(route.params.date)}
+        title={route.params.date}
         color={priorEmotion[prime].color.toString() + '50'}
         pressLeft={() => navigation.goBack()}
       />

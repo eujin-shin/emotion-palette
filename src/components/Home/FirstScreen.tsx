@@ -6,7 +6,6 @@ import TitleText from '../../common/TitleText';
 import {priorEmotion} from '../../../sampleData';
 import {HomeStackParams} from '../../pages/Home';
 import HomeStackHeader from './HomeStackHeader';
-import dayToString from '../../common/dayToString';
 import ScrollSpectrum from '../../common/ScrollSpectrum';
 import NextButton from '../../common/NextButton';
 
@@ -20,7 +19,7 @@ export default function FirstScreen({
   return (
     <View>
       <HomeStackHeader
-        title={dayToString(route.params.date)}
+        title={route.params.date}
         color="#E8E8E8"
         pressLeft={() => navigation.goBack()}
       />
