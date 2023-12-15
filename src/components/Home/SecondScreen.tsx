@@ -140,7 +140,7 @@ export default function SecondScreen({
             navigation.navigate('Record', {
               date: route.params.date,
               prime: prime,
-              secondary: '',
+              secondary: second,
             });
           }}
         />

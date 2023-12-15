@@ -59,6 +59,7 @@ export default function RecordScreen({
   route,
 }: StackScreenProps<HomeStackParams, 'Record'>) {
   const [prime, setPrime] = useState(route.params.prime);
+  const [second, setSecond] = useState(route.params.secondary);
   const [modal, setModal] = useState(false);
   const [record, setRecord] = useState('');
 
@@ -138,7 +139,7 @@ export default function RecordScreen({
                 letterSpacing: -0.6,
                 marginHorizontal: 5,
               }}>
-              2차 감정
+              {second}
             </Text>
           </View>
           <View
